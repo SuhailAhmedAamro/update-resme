@@ -1,0 +1,492 @@
+/* General Styles */
+body {
+font-family:   Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background-color: rgb(255, 255, 255);
+color: rgb(255, 254, 254); /* Dark Blue */
+}
+
+/* Card Styles */
+.card {
+
+border-radius: 90px 0 90px 0px;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 145, 0, 0.5); /* Black-yellow glow */
+max-width: 900px;
+width: 85%;
+margin: 20px;
+padding: 20px;
+box-sizing: border-box;
+animation: fadeIn 0.5s ease-in-out;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+box-shadow: 0 8px 16px rgba(228, 3, 3, 0.2), 0 0 20px rgba(214, 6, 6, 0.6); 
+transform: scale(1.05);
+}
+
+/* Header Styles */
+.card-header {
+background: linear-gradient(45deg, #ffffff, #00b7ff); 
+color: #fff;
+padding: 20px;
+border-radius: 90px 0px 90px 0px;
+text-align: center;
+animation: slideInTop 0.5s ease forwards;
+}
+
+/* Professional & Personal Information Headings with Animation */
+h2 {
+font-size: 4.5em;
+margin: 20px 0;
+color: #00ff40; /* Yellow color */
+position: relative;
+overflow: hidden;
+border-bottom: 4px solid linear-gradient(45deg, #ffffff, #2600ff); ;
+}
+
+h2::after {
+content: "";
+position: absolute;
+bottom: 0;  
+left: 0;
+width: 100%;
+height: 3px;
+background: #000000; /* Yellow underline */
+transform: translateX(-100%);
+animation: underline 1s ease forwards;
+
+}
+
+@keyframes underline {
+0% {
+transform: translateX(-100%);
+}
+100% {
+transform: translateX(0);
+}
+}
+
+/* Button Styles with Animation */
+.btn, .dddd {
+background: linear-gradient(90deg, #000, #5900ff); /* Black to yellow gradient */
+color: rgb(255, 255, 255);
+padding: 12px 25px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+margin: 20px 0;
+width: 100%;
+font-size: 1.1em;
+text-align: center;
+box-shadow: 0 4px 10px rgba(0, 225, 255, 0.4); /* Yellow glow effect */
+transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.btn:hover, .dddd:hover {
+box-shadow: 0 4px 20px rgba(255, 0, 170, 0.6); /* Enhanced yellow glow on hover */
+transform: scale(1.05);
+}
+
+.btn:active, .dddd:active {
+background: linear-gradient(90deg, #333, #00ff37);
+box-shadow: 0 0 20px rgba(4, 0, 255, 0.8); /* Stronger yellow glow */
+}
+
+/* Container and Row Layout */
+.container {
+padding: 20px;
+animation: slideInBottom 0.5s ease 0.2s forwards;
+}
+
+.container .row {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 15px;
+margin-top: 20px;
+
+}
+
+/* Input and Resume Section */
+.input, .resume-section {
+padding: 15px;
+background-color: #030303; /* Light background */
+border: 1px solid #5a07f5;
+border-radius: 8px;
+margin: 10px 0;
+transition: transform 0.3s ease;
+}
+
+.input:hover, .resume-section:hover {
+transform: translateY(-5px);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea,
+input[type="file"] {
+width: 100%;
+padding: 10px;
+box-sizing: border-box;
+font-size: 1em;
+color: black;
+margin-bottom: 15px;
+transition: box-shadow 0.3s ease, transform 0.3s ease;
+text-align: center ;
+border-radius: 15px 0px 15px;
+border: 5px solid #0084ff;
+}
+input,email{
+width: 100%;
+padding: 10px;
+border: 5px solid #0084ff;
+border-radius: 15px 0px 15px;
+box-sizing: border-box;
+font-size: 1em;
+color: black;
+margin-bottom: 15px;
+transition: box-shadow 0.3s ease, transform 0.3s ease;
+text-align: center ;
+}
+
+
+/* Input Focus Animation */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+border-color: #ff0040; /* Yellow border on focus */
+box-shadow: 0 0 8px rgba(255, 115, 0, 0.6); /* Subtle yellow glow */
+transform: scale(1.02); /* Slight zoom effect */
+}
+
+/* Label Styles */
+label {
+font-weight: 600;
+display: block;
+margin-bottom: 5px;
+color: rgb(0, 0, 0);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(-20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes float {
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-5px);
+}
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+box-shadow: 0 0 15px rgba(0, 255, 98, 0.5);
+}
+100% {
+transform: scale(1);
+}
+}
+
+@media (max-width: 768px) {
+.container .row {
+grid-template-columns: 1fr;
+}
+}
+
+@media print {
+.btn, .generate-cv-btn {
+display: none;
+}
+}
+
+
+/*sssssssssssssss*/
+/* Container styling */
+.container {
+display: flex;
+flex-direction: column;
+width: 100%;
+padding: 20px;
+background: linear-gradient(135deg, #e6e9f0, #eef2f3);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #333;
+}
+
+/* Profile Section Styling for Screen */
+.container {
+display: flex;
+flex-direction: column;
+width: 100%;
+padding: 20px;
+background: linear-gradient(135deg, #e6e9f0, #eef2f3);
+font-family: 'Segoe UI', Tahoma, sans-serif;
+color: #333;
+
+}
+
+/* Profile Section Styling for Screen */
+.profile {
+display: flex;
+align-items: center;
+margin-bottom: 7px;
+background: linear-gradient(45deg, #000, #00eeff);
+color: rgb(0, 89, 255);
+padding: 25px;
+border-radius: 8px;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+.profile h2 {
+color: white;
+font-size: 2rem;
+font-weight: 600;
+margin-left: 20px;
+}
+
+.profile-image {
+width: 140px;
+height: 140px;
+border-radius: 50%;
+object-fit: cover;
+border: 4px solid rgb(0, 0, 0);
+margin: 20px;
+}
+
+/* Responsive Profile Section */
+@media (max-width: 768px) {
+.profile {
+flex-direction: column;
+text-align: center;
+padding: 15px;
+}
+
+.profile-image {
+margin: 0 auto 10px;
+width: 120px;
+height: 120px;
+}
+
+.profile h2 {
+font-size: 1.6rem;
+margin: 10px 0;
+}
+}
+
+/* Large Screen Profile Section */
+@media (min-width: 769px) {
+.profile {
+flex-direction: row;
+text-align: left;
+}
+
+.profile h2 {
+font-size: 2rem;
+margin-left: 20px;
+}
+
+.profile-image {
+margin-right: 20px;
+width: 140px;
+height: 140px;
+}
+}
+
+/* Resume Container Styling */
+.resume-container {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+gap: 10px;
+padding: 30;
+}
+
+/* Contact & Professional Sections */
+.contact-section, .professional-section {
+background-color: rgb(0, 0, 0);
+border-radius: 8px;
+padding: 25px;
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section Specific Styling */
+.contact-section {
+background: linear-gradient(45deg, #000, #ffd700);
+color: rgb(0, 0, 0);
+width: 30%;
+}
+
+.contact-section h2 {
+color: white;
+}
+
+/* Professional Section */
+.professional-section {
+background-color: #ffffff;
+color:black;
+width: 80%;
+}
+
+h2 {
+color: black;
+border-bottom: 3px solid #ffebc2;
+padding-bottom: 5px;
+margin-bottom: 20px;
+font-size: 1.5rem;
+}
+.dddd{
+width: 40%;
+}
+
+/* Print Styling for All Screens */
+@media print {
+/* General Print Adjustments */
+body {
+color: #333;
+background-color: #000000;
+/* -webkit-print-color-adjust: exact; Ensures colors print accurately */
+}
+
+/* Hide Buttons during Print */
+.btn {
+display: none; /* Hide buttons during print */
+}
+
+/* Profile Section Print */
+.profile {
+display: flex;
+flex-direction: column; /* Stack profile elements vertically on small screens */
+align-items: center; /* Center content on small screens */
+text-align: center; /* Ensure text is centered on small screens */
+padding: 15px;
+width: 70%; /* Control profile section width */
+margin: 0 auto; /* Center profile */
+border: #00ff37 solid 4px;
+box-shadow: rgb(100, 10, 6);
+}
+
+.profile h2 {
+color: #2c00f1;
+font-size: 1.6rem;
+margin-top: 10px;
+padding-bottom: 0px;
+}
+
+.profile-image {
+width: 120px;
+height: 120px;
+object-fit: cover;
+margin-bottom: 10px; 
+border: solid 2px rgb(0, 0, 0);
+}
+
+/* Resume Container for Print */
+.resume-container {
+display: flex;
+flex-direction: row;
+gap: 15px;
+width: 100%;
+padding: 15;
+margin: 0;
+}
+
+/* Contact Section Print */
+.contact-section {
+background-color: black;
+color: white;
+width: 58%;
+margin: 0 5px;
+padding: 10px;
+border-radius: 5px;
+}
+
+.contact-section h2 {
+color: white;
+font-size: 1.3rem;
+margin-bottom: 8px;
+
+}
+
+/* Professional Section Print */
+.professional-section {
+background-color: #f50707;
+color:black;
+width: 68%;
+margin: 0 5px;
+padding: 10px;
+border-radius: 5px;
+}
+
+/* Print Layout Adjustments for Small Screens (Mobile) */
+@media (max-width: 768px) {
+.profile, .contact-section, .professional-section {
+width: 97%; /* Ensure all sections take full width on small screens */
+margin: 0 0 10px 0;
+padding: 10px;
+}
+
+.profile h2 {
+font-size: 1.3rem; /* Adjust font size for smaller screens */
+}
+
+.profile-image {
+width: 100px;
+height: 100px;
+}
+
+.contact-section, .professional-section {
+padding: 8px; /* Adjust padding for small screens */
+}
+}
+
+/* Large Screens Adjustments (Above 768px) */
+@media (min-width: 769px) {
+.profile {
+flex-direction: row; /* Arrange profile content in a row on large screens */
+align-items: center; /* Vertically center the items */
+text-align: left; /* Align text to the left */
+width: 97%; /* Adjust width for larger screens */
+margin-bottom: 7px;
+}
+
+.profile h2 {
+font-size: 2rem;
+margin-left: 20px; /* Space between name and profile image */
+}
+
+.profile-image {
+margin-right: 20px; /* Space between image and name */
+width: 140px;
+height: 140px;
+}
+}
+}
+@media print {
+/* Hide buttons during print */
+.btn, button {
+display: none !important; /* Ensure buttons are hidden */
+}
+}
+
+
